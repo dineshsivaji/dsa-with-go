@@ -8,12 +8,45 @@ type Node struct {
 	data string
 	next *Node
 }
-
 type SinglyLinkedList struct {
 	head *Node
 	size int
 }
 
+func (sll SinglyLinkedList) GetSize() int {
+	return sll.size
+}
+
+func (sll *SinglyLinkedList) InsertAt(elem string, idx int) {
+	if idx < 0 {
+		fmt.Println("Invalid index")
+		return
+	} else if idx == 0 {
+		sll.InsertFirst(elem)
+	} else if idx == sll.GetSize() {
+		sll.InsertLast(elem)
+	} else {
+		newNode := Node{data: elem}
+		currentNode := sll.head
+		prevNode := sll.head
+		index := -1
+		isIndexFound := false
+		for currentNode != nil {
+			prevNode = currentNode
+			currentNode = currentNode.next
+			index++
+			if index == idx {
+				isIndexFound = true
+				break
+			}
+		}
+		if isIndexFound && prevNode != nil {
+			prevNode.next = &newNode
+		} else {
+			fmt.Println("Invalid index to insert")
+		}
+	}
+}
 func (sll *SinglyLinkedList) InsertLast(elem string) {
 	newNode := Node{data: elem}
 	if sll.head == nil {
