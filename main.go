@@ -6,23 +6,28 @@ import (
 
 func main() {
 
-	// x := linkedlist.SinglyLinkedList{}
-
-	// x.InsertLast("A")
-	// x.InsertLast("B")
-	// x.InsertFirst("Z")
-	// x.InsertFirst("Y")
-	// x.Display()
-	// x.RemoveFirst()
-	// x.Display()
-	// x.RemoveLast()
-	// x.Display()
-	// x.InsertAt("Q", 1)
-	// x.Display()
-	x := ll.SinglyCircularLinkedList{}
-	x.InsertLast("12")
-	x.InsertLast("14")
+	x := ll.DoublyLinkedList{}
+	x.InsertFirst("12")
+	x.InsertFirst("13")
+	x.InsertFirst("14")
+	x.Display()
+	x.InsertLast("26")
+	x.InsertLast("27")
+	x.InsertLast("28")
+	x.Display()
+	x.RemoveLast()
+	x.Display()
+	x.RemoveLast()
 	x.Display()
 	x.RemoveFirst()
 	x.Display()
+	x.RemoveFirst()
+	x.Display()
+	x.RemoveFirst()
+	x.Display()
+	x.RemoveFirst()
+	x.Display()
+	x.RemoveLast()
+	x.Display()
+
 }
